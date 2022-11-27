@@ -11,7 +11,13 @@
                 </section>
 
                 <section class="game-panel">
-                    Game area
+                    <ul class="deck card-deck grid-container">
+                        <template for:each={cards} for:item="card">
+                            <li class={card.listClass} type={card.type} key={card.id}>
+                                <i class={card.icon}></i>
+                            </li>
+                        </template>
+                    </ul>
                 </section>
             </div>
         </lightning-card>
