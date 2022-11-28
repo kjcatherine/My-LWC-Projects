@@ -17,3 +17,28 @@
     cursor: pointer;
     margin: 0px 8px;
 }
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    background: #1c3260;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+}
+.grid-container .card{
+    height: 3.7rem;
+    width: 3.7rem;
+    margin: 0.2rem;
+    background: #f03d5f;
+    font-size: 0px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
