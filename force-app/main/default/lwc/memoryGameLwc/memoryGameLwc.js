@@ -22,6 +22,11 @@ export default class MemoryGameLwc extends LightningElement {
         {id:15, listClass:"card", type:'plane', icon:'fa fa-paper-plane-o'},
         {id:16, listClass:"card", type:'cube', icon:'fa fa-cube'},
     ]
+    //To flip the card on click of each grid item
+    displayCard(event){
+        let currCard = event.target
+        currCard.classList.add("open", "show", "disabled")
+    }
 
 
 

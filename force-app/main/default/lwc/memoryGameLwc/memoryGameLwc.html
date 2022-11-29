@@ -13,7 +13,7 @@
                 <section class="game-panel">
                     <ul class="deck card-deck grid-container">
                         <template for:each={cards} for:item="card">
-                            <li class={card.listClass} type={card.type} key={card.id}>
+                            <li class={card.listClass} type={card.type} key={card.id} onclick={displayCard}>
                                 <i class={card.icon}></i>
                             </li>
                         </template>
