@@ -42,7 +42,7 @@
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-.card.open{
+.grid-container .card.open{
     transform: rotateY(0);
     background-color: #02b3e4;
     cursor: default;
@@ -51,13 +51,13 @@
     backface-visibility: visible !important;
     animation-duration: .75s;
 }
-.card.show{
+.grid-container .card.show{
     font-size: 33px;
     visibility: visible !important;
     opacity: 100 !important;
 }
 /* once a card is open and showed, be unable to click it */
-.card.disabled{
+.grid-container .card.disabled{
     pointer-events: none;
     opacity: 0.9;
 }
