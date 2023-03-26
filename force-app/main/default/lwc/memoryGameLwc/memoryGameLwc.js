@@ -4,6 +4,10 @@ import {loadStyle} from 'lightning/platformResourceLoader'
 import fontawesome from '@salesforce/resourceUrl/fontawesome'
 export default class MemoryGameLwc extends LightningElement {
     isLibLoaded = false;
+    //we want to be able to only flip two cards only
+    openedCards=[]
+    matchedCard = []
+    moves = 0
     cards=[
         {id:1, listClass:"card", type:'diamond', icon:'fa fa-diamond'},
         {id:2, listClass:"card", type:'plane', icon:'fa fa-paper-plane-o'},
@@ -26,6 +30,31 @@ export default class MemoryGameLwc extends LightningElement {
     displayCard(event){
         let currCard = event.target
         currCard.classList.add("open", "show", "disabled")
+        //we want to be able to only flip two cards only
+        //we are pushing cards that are opened into the empty array(push/pop too)
+        this.openedCards = this.openedCards.concat(event.target)
+        const len = this.openedCards.length
+        if(len === 2){
+            this.moves = this.moves+1
+            if(this.openedCards[0].type === this.openedCards[1].type){
+                this.matchedCard = this.matchedCard.concat(this.openedCards[0], this.openedCards[1])
+                this.matched()
+            }else{
+                this.unmatched()
+            }
+        }
+    }
+
+    matched(){
+        this.openedCards[0].classList.add("match", "disabled")
+        this.openedCards[1].classList.add("match", "disabled")
+        this.openedCards[0].classList.remove("show", "open")
+        this.openedCards[1].classList.remove("show", "open")
+        this.openedCards=[]
+    }
+    unmatched(){
+        this.openedCards[0].classList.add("unmatched")
+        this.openedCards[1].classList.add("unmatched")
     }
 
 
