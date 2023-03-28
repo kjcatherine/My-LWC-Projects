@@ -55,6 +55,28 @@ export default class MemoryGameLwc extends LightningElement {
     unmatched(){
         this.openedCards[0].classList.add("unmatched")
         this.openedCards[1].classList.add("unmatched")
+        this.action('DISABLE')
+
+        setTimeout(() =>{
+            this.openedCards[0].classList.remove("show", "open", "unmatched")
+            this.openedCards[1].classList.remove("show", "open", "unmatched")
+            this.action('ENABLE')
+            this.openedCards=[]
+        }, 1100)
+    }
+    action(action){
+        let cards = this.template.querySelectorAll('.card')
+        Array.from(cards).forEach(item => {
+            if(action === 'ENABLE'){
+                let isMatch = item.classList.contains('match')
+                if(!isMatch){
+                    item.classList.remove('disabled')
+                }
+            }
+            if(action === "DISABLE"){
+                item.classList.add('disabled')
+            }
+        });
     }
 
 

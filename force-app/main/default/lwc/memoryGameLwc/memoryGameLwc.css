@@ -62,6 +62,22 @@
     opacity: 0.9;
 }
 
+.grid-container .card.match{
+    cursor: default;
+	background: #e26f11;
+	font-size: 33px;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+.grid-container .card.unmatched{
+    animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+	background: #e2043b;
+}
 
 /*animations*/
 @keyframes flipInY {
@@ -89,7 +105,7 @@
 		transform: perspective(400px);
 	}
 }
-/* @keyframes rubberBand {
+@keyframes rubberBand {
 	from {
 		transform: scale3d(1, 1, 1);
 	}
@@ -130,4 +146,4 @@
 	to {
 		transform: scale3d(1, 1, 1);
 	}
-} */
+}
