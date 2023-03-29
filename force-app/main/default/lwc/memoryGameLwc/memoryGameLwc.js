@@ -7,7 +7,9 @@ export default class MemoryGameLwc extends LightningElement {
     //we want to be able to only flip two cards only
     openedCards=[]
     matchedCard = []
+    totalTime = '00:00'
     moves = 0
+    timerRef;
     cards=[
         {id:1, listClass:"card", type:'diamond', icon:'fa fa-diamond'},
         {id:2, listClass:"card", type:'plane', icon:'fa fa-paper-plane-o'},
@@ -36,6 +38,10 @@ export default class MemoryGameLwc extends LightningElement {
         const len = this.openedCards.length
         if(len === 2){
             this.moves = this.moves+1
+            //to tigger our timer only at the first move
+            if(this.moves === 1){
+                this.timer()
+            }
             if(this.openedCards[0].type === this.openedCards[1].type){
                 this.matchedCard = this.matchedCard.concat(this.openedCards[0], this.openedCards[1])
                 this.matched()
@@ -51,6 +57,10 @@ export default class MemoryGameLwc extends LightningElement {
         this.openedCards[0].classList.remove("show", "open")
         this.openedCards[1].classList.remove("show", "open")
         this.openedCards=[]
+        //to stop timer after they are all matched/completed
+        if(this.matchedCard.length === 16){
+            window.clearInterval(this.timerRef)
+        }
     }
     unmatched(){
         this.openedCards[0].classList.add("unmatched")
@@ -79,7 +89,18 @@ export default class MemoryGameLwc extends LightningElement {
         });
     }
 
-
+    timer(){
+        let startTime = new Date()
+        this.timerRef = setInterval(() => {
+            let diff = new Date().getTime() - startTime.getTime
+            let d   = Math.floor(diff/1000)
+            const m = Math.floor(d % 3600 / 60)
+            const s = Math.floor(d % 3600 % 60)
+            const mDisplay = m>0 ? m+(m===1? "minute, ":" minutes, "):""
+            const sDisplay = s>0 ? s+(s===1? "second":" seconds"):""
+            this.totalTime = mDisplay + sDisplay
+        }, 1000);
+    }
 
 
 
