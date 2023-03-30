@@ -102,6 +102,31 @@ export default class MemoryGameLwc extends LightningElement {
         }, 1000);
     }
 
+    shuffle(){
+        this.openedCards=[]
+        this.matchedCard = []
+        this.totalTime = '00:00'
+        this.moves = 0
+        window.clearInterval(this.timerRef )
+        let elem = this.template.querySelectorAll('.card')
+        Array.from(elem).forEach(item =>{
+            item.classList.remove("show", "open", "match", "disabled")
+        })
+
+        //shuffling and swapping logic
+        let array = [...this]
+        let counter = array.length
+        while(counter > 0){
+            let index = Math.floor(Math.random() * counter)
+            counter --
+
+            let temp = array[counter]
+            array[counter] = array[index]
+            array[index] = temp
+        }
+        this.cards = [...array]
+    }
+
 
 
     //Whenever we load a third party library we always use a renderedcallbacl\k
