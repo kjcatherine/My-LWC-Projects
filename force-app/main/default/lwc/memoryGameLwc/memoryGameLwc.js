@@ -111,23 +111,22 @@ export default class MemoryGameLwc extends LightningElement {
     }
 
     shuffle(){
-        this.showCongratulations = false;
-        this.openedCards=[]
-        this.matchedCard = []
-        this.totalTime = '00:00'
-        this.moves = 0
-        window.clearInterval(this.timerRef )
+        this.showCongratulations = false
+        this.openedCards =[]
+        this.matchedCard=[]
+        this.totalTime='00:00'
+        this.moves=0
+        window.clearInterval(this.timerRef)
         let elem = this.template.querySelectorAll('.card')
-        Array.from(elem).forEach(item =>{
+        Array.from(elem).forEach(item=>{
             item.classList.remove("show", "open", "match", "disabled")
         })
-
-        //shuffling and swapping logic
-        let array = [...this]
+        /***shuffling and swaping logic */
+        let array = [...this.cards]
         let counter = array.length
-        while(counter > 0){
-            let index = Math.floor(Math.random() * counter)
-            counter --
+        while(counter>0){
+            let index = Math.floor(Math.random()*counter)
+            counter--
 
             let temp = array[counter]
             array[counter] = array[index]
