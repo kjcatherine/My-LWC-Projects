@@ -26,9 +26,10 @@
                                 <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Hurray!!! you're a winner 🎉 🎉
                                 </h2>
                             </header>
-                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                                <p>You made <strong>{moves}</strong> moves in {totalTime}</p>
-                                <p>Your rating:
+                            <div class="slds-modal__content slds-p-around_medium slds-text-heading_medium" id="modal-content-id-1">
+                                <p class="slds-text-color_success">You made <strong>{moves}</strong> moves in {totalTime}</p>
+                                <div class="slds-m-buttom_medium"></div>
+                                <p>Your rating: 
                                     <template for:each={gameRating} for:item="rating">
                                         <i class="fa fa-star" key={rating}></i>
                                     </template>

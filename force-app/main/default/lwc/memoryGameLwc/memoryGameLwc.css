@@ -61,7 +61,9 @@
     pointer-events: none;
     opacity: 0.9;
 }
-
+.fa-star{
+    color: #e26f11;
+}
 .grid-container .card.match{
     cursor: default;
 	background: #e26f11;
