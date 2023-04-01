@@ -10,6 +10,7 @@ export default class MemoryGameLwc extends LightningElement {
     totalTime = '00:00'
     moves = 0
     timerRef;
+    showCongratulations = false;
     cards=[
         {id:1, listClass:"card", type:'diamond', icon:'fa fa-diamond'},
         {id:2, listClass:"card", type:'plane', icon:'fa fa-paper-plane-o'},
@@ -28,6 +29,12 @@ export default class MemoryGameLwc extends LightningElement {
         {id:15, listClass:"card", type:'plane', icon:'fa fa-paper-plane-o'},
         {id:16, listClass:"card", type:'cube', icon:'fa fa-cube'},
     ]
+
+    get gameRating(){
+        let stars = this.moves > 9 && this.moves < 12 ? [1,2,3] : this.moves > 13 ? [1,2] : [1]
+        return this.matchedCard.length === 16 ? stars : []
+    }
+
     //To flip the card on click of each grid item
     displayCard(event){
         let currCard = event.target
@@ -60,6 +67,7 @@ export default class MemoryGameLwc extends LightningElement {
         //to stop timer after they are all matched/completed
         if(this.matchedCard.length === 16){
             window.clearInterval(this.timerRef)
+            this.showCongratulations = true
         }
     }
     unmatched(){
@@ -91,18 +99,19 @@ export default class MemoryGameLwc extends LightningElement {
 
     timer(){
         let startTime = new Date()
-        this.timerRef = setInterval(() => {
-            let diff = new Date().getTime() - startTime.getTime
-            let d   = Math.floor(diff/1000)
-            const m = Math.floor(d % 3600 / 60)
-            const s = Math.floor(d % 3600 % 60)
-            const mDisplay = m>0 ? m+(m===1? "minute, ":" minutes, "):""
-            const sDisplay = s>0 ? s+(s===1? "second":" seconds"):""
-            this.totalTime = mDisplay + sDisplay
-        }, 1000);
+        this.timerRef = setInterval(()=>{
+          let diff = new Date().getTime() - startTime.getTime()
+          let d = Math.floor(diff/1000)
+          const m = Math.floor(d % 3600 / 60);
+          const s = Math.floor(d % 3600 % 60);
+          const mDisplay = m>0 ? m+(m===1? "minute, ":" minutes, "):""
+          const sDisplay = s>0 ? s+(s===1? "second":" seconds"):""
+          this.totalTime = mDisplay + sDisplay
+        }, 1000)
     }
 
     shuffle(){
+        this.showCongratulations = false;
         this.openedCards=[]
         this.matchedCard = []
         this.totalTime = '00:00'
