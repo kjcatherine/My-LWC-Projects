@@ -30,14 +30,12 @@
                                 <div class="slds-m-around_medium">
                                     <p class="slds-text-color_success">You made <strong>{moves}</strong> moves in {totalTime}</p>
                                 </div>
-                                <div class="slds-m-around_medium">
                                     <p>Your rating: 
                                         <template for:each={gameRating} for:item="rating">
                                             <i class="fa fa-star" key={rating}></i>
                                         </template>
                                     </p>
                                 </div>                               
-                            </div>
                             <footer class="slds-modal__footer slds-m-around_medium ">
                             <button class="slds-button slds-button_brand" onclick={shuffle}>Play Again</button>
                             </footer>
