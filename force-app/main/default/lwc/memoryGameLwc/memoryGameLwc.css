@@ -64,6 +64,18 @@
 .fa-star{
     color: #e26f11;
 }
+h1{
+	font-size: 1.5rem;
+}
+p{
+	font-size: 1.2rem;
+}
+.btn {
+	color: white;
+	background-color: #e26f11;
+	font-size: 0.8rem;
+	padding: 5px 15px;
+}
 .grid-container .card.match{
     cursor: default;
 	background: #e26f11;
