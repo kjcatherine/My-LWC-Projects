@@ -1,0 +1,83 @@
+<template>
+    <div style="background:#ef4101;" class="slds-p-around_large">
+        <lightning-card>
+            <header class="slds-align_absolute-center header">
+                <h2>Indulgence Cuisine</h2>
+            </header>
+            <p class="tagline">Experience fine dining, Indulge in delicious food in a great ambience</p>
+            <div class="slds-p-around_medium">
+
+                <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                    <div class="slds-size_1-of-2 slds-float_left slds-p-around_medium">
+                        <lightning-card>
+                            <header class="menu">
+                                <p>Featured Menu Items</p>
+                            </header>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_x-small"><h3 class="carousel-subheading">Delicious Treats</h3>
+                                <lightning-carousel>
+                                    <template for:each={featuredMenuItems} for:item="menuItem">
+                                        <lightning-carousel-image class="image-container"
+                                            key={menuItem.header}
+                                            src={menuItem.src}
+                                            header={menuItem.header}
+                                            description={menuItem.description}
+                                            price={menuItem.price}>
+                                        </lightning-carousel-image>
+                                    </template>
+                                </lightning-carousel>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-size_1-of-2 slds-float_right push-container slds-p-around_medium" style="background: #e4e4e5;">
+                        <lightning-card>
+                            <header class="form-title">
+                                <p>Make a Reservation</p>
+                            </header>
+                            <lightning-record-edit-form object-api-name={objectName} 
+                            density="compact"
+                            onsuccess={sucessHandler}>
+                    
+                                <lightning-messages></lightning-messages>
+        
+                                <div class="slds-grid slds-wrap slds-p-around--medium" style="background:#f7f7f7;">
+                                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_medium
+                                    slds-p-vertical_medium">
+                                        <label class="slds-p-left_x-small slds-p-bottom_large">Name</label>
+                                        <lightning-input-field variant="label-hidden" field-name={fields.nameField}></lightning-input-field>
+                                    </div>
+
+                                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_medium slds-p-vertical_medium">
+                                        <label class="slds-p-left_x-small slds-p-bottom_large">Number of Guests</label>
+                                        <lightning-input-field variant="label-hidden" field-name={fields.guestField}></lightning-input-field>
+                                    </div>
+
+                                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_medium slds-p-vertical_medium">
+                                        <label class="slds-p-left_x-small slds-p-bottom_large">Date</label>
+                                        <lightning-input-field variant="label-hidden" field-name={fields.dateField}></lightning-input-field>
+                                    </div>
+
+                                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_medium slds-p-vertical_medium">
+                                        <label class="slds-p-left_x-small slds-p-bottom_large">Time</label>
+                                        <lightning-input-field variant="label-hidden" field-name={fields.timeField}></lightning-input-field>
+                                    </div>
+
+                                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_medium">
+                                        <label class="slds-p-left_x-small slds-p-bottom_large">Email</label>
+                                        <lightning-input-field variant="label-hidden" field-name={fields.emailField}></lightning-input-field>
+                                    </div>
+                                </div>
+
+                                <div class="slds-clearfix btn">
+                                    <button class="slds-button slds-float_right slds-m-around_medium btn2" type="submit">Make Reservation</button>
+                                </div>
+                            </lightning-record-edit-form>
+                        </lightning-card>
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>
+
+
