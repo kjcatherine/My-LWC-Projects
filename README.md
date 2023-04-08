@@ -1,7 +1,7 @@
 # Salesforce LWC Projects
-A collection of my personal Lightning Web Components.
+A collection of my personal Lightning Web Components Projects.
 
 ## Index
-- [Apex Snippets](force-app/main/default/lwc/memoryGameLwc)
-- [LWC Snippets](force-app/main/default/lwc/restaurantLandingPage)
+- [Memory Game](force-app/main/default/lwc/memoryGameLwc)
+- [Restaurant Page](force-app/main/default/lwc/restaurantLandingPage)
 
