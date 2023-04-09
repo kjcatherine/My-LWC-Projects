@@ -2,7 +2,7 @@
 
 - A game App built with Salesforce LWC
 
-<img src='/memorygame.gif'>
+<img src='/public/memorygame.gif'>
 
 ## Tech used
 
