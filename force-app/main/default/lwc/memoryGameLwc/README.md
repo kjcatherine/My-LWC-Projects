@@ -9,7 +9,7 @@
 
 - SalesforceDX 
 - Lightning Web Components framework
-- javascript
+- Javascript
 - Salesforce Lightning Design Systems
 - CSS custom properties
 - Salesforce CLI
@@ -22,5 +22,5 @@
 - Implement Login
 
 ## Lesson learned
-- Working base lightning components
+- Working with base lightning components
 

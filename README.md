@@ -2,6 +2,7 @@
 A collection of my personal Lightning Web Components Projects.
 
 ## Index
-- [Memory Game](force-app/main/default/lwc/memoryGameLwc)
-- [Restaurant Page](force-app/main/default/lwc/restaurantLandingPage)
+1. Memory Game - A game App built with Salesforce LWC [See Component](force-app/main/default/lwc/memoryGameLwc)
+
+2. A restaurant order App built with Salesforce LWC [See Component](force-app/main/default/lwc/restaurantLandingPage)
 
