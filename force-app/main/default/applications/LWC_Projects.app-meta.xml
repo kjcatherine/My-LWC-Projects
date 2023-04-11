@@ -12,6 +12,8 @@
     <label>LWC Projects</label>
     <navType>Standard</navType>
     <tabs>Memory_Game</tabs>
+    <tabs>Restaurant</tabs>
+    <tabs>Reservation__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LWC_Projects_UtilityBar</utilityBar>
 </CustomApplication>
