@@ -2,8 +2,8 @@ import { LightningElement, track } from 'lwc';
 
 export default class MovieListApp extends LightningElement {
     @track moviesData;
-    // query=''
-    // timer
+    query=''
+    timer
     connectedCallback() {
         this.fetchMovieData()
     }
@@ -28,11 +28,11 @@ export default class MovieListApp extends LightningElement {
             });
     }
 
-    // fetchMoviesHandler(event){
-    //     this.query= event.target.value
-    //     window.clearTimeout(this.timer)
-    //     this.timer = setTimeout(()=>{
-    //         this.fetchMovieData()
-    //     }, 1000)
-    // }
+    fetchMoviesHandler(event){
+        this.query= event.target.value
+        window.clearTimeout(this.timer)
+        this.timer = setTimeout(()=>{
+            this.fetchMovieData()
+        }, 1000)
+    }
 }
