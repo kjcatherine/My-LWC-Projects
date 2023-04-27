@@ -2,7 +2,8 @@
 
 - A game App built with Salesforce LWC
 
-<img src='/public/memorygame.gif'>
+
+![memorygame](https://user-images.githubusercontent.com/100381663/234882144-706e52fa-bf19-4fe3-bc85-d2fd11dd26f4.gif)
 
 ## Tech used
 
@@ -22,3 +23,4 @@
 
 ## Lesson learned
 - Working base lightning components
+
