@@ -2,14 +2,14 @@ import { LightningElement, track } from 'lwc';
 
 export default class MovieListApp extends LightningElement {
     @track moviesData;
-    query='sha'
-    //timer
+    query=''
+    timer
     connectedCallback() {
         this.fetchMovieData()
     }
 
-    fetchMovieData(){
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=78979c75fb54c40e6eeca19518342eda&language=en-US&query=${this.query}`)
+    fetchMovieData() {
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=78979c75fb54c40e6eeca19518342eda&language=en-US&query=${this.query}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -27,14 +27,14 @@ export default class MovieListApp extends LightningElement {
                 console.error('There was a problem with the fetch operation:', error);
             });
     }
-
+    
     fetchMoviesHandler(event){
-        this.query = event.target.value;
-        this.fetchMovieData();
-        // this.query= event.target.value
-        // window.clearTimeout(this.timer)
-        // this.timer = setTimeout(()=>{
-        //     this.fetchMovieData()
-        // }, 1000)
+        // this.query = event.target.value;
+        //fetchMovieData();
+        this.query= event.target.value
+        window.clearTimeout(this.timer)
+        this.timer = setTimeout(()=>{
+            this.fetchMovieData()
+        }, 1000)
     }
 }
