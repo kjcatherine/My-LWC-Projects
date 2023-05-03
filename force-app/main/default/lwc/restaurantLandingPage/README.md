@@ -2,8 +2,7 @@
 
 - A restaurant order App built with Salesforce LWC
 
-
-<!-- ![memorygame](https://user-images.githubusercontent.com/100381663/234882144-706e52fa-bf19-4fe3-bc85-d2fd11dd26f4.gif) -->
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/100381663/234900945-c45b66d2-90c3-4c63-b150-57e9991fe14c.gif)
 
 ## Tech used
 
@@ -22,3 +21,4 @@
 
 ## Lesson learned
 - Learnt new ways to custmize lightning-card
+
