@@ -2,8 +2,8 @@
         <lightning-card>
             <div class="slds-p-around_medium">
                 <div class="slds-p-around_medium">
+                    <!-- removed onchange={fetchMoviesHandler} since we are now hhandling the search query in the fetchMoviesHandler  -->
                     <lightning-input type="search"
-                    onchange={fetchMoviesHandler}
                     label="Search Movies"
                     value={query}
                     ></lightning-input>
