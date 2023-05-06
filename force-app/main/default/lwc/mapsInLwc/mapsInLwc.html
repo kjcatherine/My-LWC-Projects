@@ -2,7 +2,8 @@
     <div class="slds-box">
         <!-- Because wire is an asyn operation, for this mapMarkers, we need to check first -->
         <template if:true={mapMarkers.length}>
-            <lightning-map 
+            <lightning-map
+            style="background: #eef3f5;"
             map-markers={mapMarkers}
             markers-title={markersTitle}
             onmarkerselect={callMarkerHandler}

@@ -1,10 +1,10 @@
 import { LightningElement,wire } from 'lwc';
-import getAccounts from '@salesforce/apex/MapControllerLwc.getAccounts'
+import getAccounts from '@salesforce/apex/MapController.getAccounts'
 
 export default class MapsInLwc extends LightningElement {
     mapMarkers=[]
     markersTitle="Accounts Location"
-    //To load the map we need the data, and to load te data we need an apex class
+    //To load the map we need data, and to load the data we need an apex class
     @wire(getAccounts)
     wireHandler({data, error}){
         if(data){
@@ -25,7 +25,7 @@ export default class MapsInLwc extends LightningElement {
                     State:item.BillingState || '',
                     Country:item.BillingCountry || '',
                 },
-                icon:'utility:salesforce1',
+                icon:'standard:account',
                 title:item.Name,
                 value:item.Name,
                 description:item.Description
