@@ -20,5 +20,5 @@
 - Implement Login
 
 ## Lesson learned
-- Learnt new ways to custmize lightning-card
+- Learnt new ways to customize lightning-card
 
