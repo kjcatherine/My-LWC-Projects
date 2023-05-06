@@ -2,8 +2,7 @@
 
 - Using the Map component in LWC
 
-
-<!-- ![memorygame](https://user-images.githubusercontent.com/100381663/234882144-706e52fa-bf19-4fe3-bc85-d2fd11dd26f4.gif) -->
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/100381663/236634020-cdda2e13-6da9-4030-bc81-7863ef761de8.gif)
 
 ## Tech used
 

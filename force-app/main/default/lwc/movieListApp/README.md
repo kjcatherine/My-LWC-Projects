@@ -2,9 +2,7 @@
 
 - Working with external Api to create a movie search component using the [TMDB Movie Api](https://developers.themoviedb.org/3/movies/get-movie-details)
 
-
-
-<!-- ![memorygame](https://user-images.githubusercontent.com/100381663/234882144-706e52fa-bf19-4fe3-bc85-d2fd11dd26f4.gif) -->
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/100381663/236634351-8664e603-db3c-404c-b1a2-801c41e88c65.gif)
 
 ## Tech used
 
