@@ -1,27 +1,25 @@
 <template>
-        <lightning-card>
+    <lightning-card>
+        <div class="slds-p-around_medium">
             <div class="slds-p-around_medium">
-                <div class="slds-p-around_medium">
-                    <!-- removed onchange={fetchMoviesHandler} since we are now hhandling the search query in the fetchMoviesHandler  -->
-                    <lightning-input type="search"
-                    label="Search Movies"
-                    value={query}
-                    ></lightning-input>
-                </div>
-                <lightning-layout multiple-rows>
-                    <template if:true={moviesData}>
-                        <template for:each={moviesData} for:item="movie">
-                            <lightning-layout-item size="3" padding="around-small" key={movie.id}>
-                                <div class="slds-box slds-var-p-around_medium slds-text-align_center">
-                                    <img src={movie.imageUrl} width="200px" style="background:#fdf4f4;"/>
-                                    <div class="slds-text-heading_small slds-p-vertical_medium"><strong>{movie.title}</strong></div>
-                                    <div><strong>Released Date -</strong>{movie.release_date}</div>
-                                    <div><strong>Rating -</strong>{movie.vote_average}</div>
-                                </div>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout> 
+                <lightning-input type="search"
+                                 onchange={fetchMoviesHandler}
+                                 label="Search Movies"
+                                 value={searchQuery}>
+                </lightning-input>
             </div>
-        </lightning-card>
+            <lightning-layout multiple-rows>
+                <template for:each={filteredMovies} for:item="movie">
+                    <lightning-layout-item size="3" padding="around-small" key={movie.id}>
+                        <div class="slds-box slds-var-p-around_medium slds-text-align_center">
+                            <img src={movie.imageUrl} width="200px" style="background:#fdf4f4;"/>
+                            <div class="slds-text-heading_small slds-p-vertical_medium"><strong>{movie.title}</strong></div>
+                            <div><strong>Released Date -</strong>{movie.release_date}</div>
+                            <div><strong>Rating -</strong>{movie.vote_average}</div>
+                        </div>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
 </template>

@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-box">
+        <!-- Because wire is an asyn operation, for this mapMarkers, we need to check first -->
+        <template if:true={mapMarkers.length}>
+            <lightning-map 
+            map-markers={mapMarkers}
+            markers-title={markersTitle}
+            onmarkerselect={callMarkerHandler}
+            selected-marker-value={selectedMarkerValue}
+            ></lightning-map>
+        </template>
+        <template if:false={mapMarkers.length}>
+            <div>No Accounts Found!!</div>
+        </template>
+    </div>
+</template>
