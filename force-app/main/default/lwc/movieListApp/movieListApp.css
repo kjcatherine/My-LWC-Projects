@@ -1,0 +1,9 @@
+.headertext{
+    font-size: 1.8rem;
+    color: #7e2301;
+}
+.input{
+    background: #f9f9f9;
+    border: 1px solid #ed571d;
+    border-radius: 5px;
+}

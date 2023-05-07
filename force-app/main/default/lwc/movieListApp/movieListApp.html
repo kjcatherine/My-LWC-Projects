@@ -2,9 +2,11 @@
     <lightning-card>
         <div class="slds-p-around_medium">
             <div class="slds-p-around_medium">
+                <label class="headertext">Search Movies</label>
                 <lightning-input type="search"
                                  onchange={fetchMoviesHandler}
-                                 label="Search Movies"
+                                 variant="label-hidden"
+                                 class="input"
                                  value={searchQuery}>
                 </lightning-input>
             </div>

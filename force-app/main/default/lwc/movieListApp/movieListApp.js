@@ -35,8 +35,12 @@ export default class MovieListApp extends LightningElement {
         if (!this.searchQuery) {
           return this.moviesData;
         }
-        const query = this.searchQuery.toLowerCase().split(' ').join('%');
-        return this.moviesData.filter(movie => movie.title.toLowerCase().includes(query));
+        
+        const queryLetters = this.searchQuery.toLowerCase().split('');
+        return this.moviesData.filter(movie => {
+        const movieTitle = movie.title.toLowerCase();
+        return queryLetters.every(letter => movieTitle.includes(letter));
+        });
       }
       
 }
