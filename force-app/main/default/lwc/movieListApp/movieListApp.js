@@ -1,4 +1,5 @@
 import { LightningElement, track } from 'lwc';
+const apiKey = process.env.API_KEY;
 export default class MovieListApp extends LightningElement {
     @track moviesData;
     @track searchQuery = '';
@@ -8,7 +9,7 @@ export default class MovieListApp extends LightningElement {
     }
 
     fetchMovieData() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=78979c75fb54c40e6eeca19518342eda&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
