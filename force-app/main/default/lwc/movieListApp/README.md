@@ -1,6 +1,7 @@
-# Map Component
+# Movie Search
 
-- Using the Map component in LWC
+- Working with external Api to create a movie search component using the [TMDB Movie Api](https://developers.themoviedb.org/3/movies/get-movie-details)
+
 
 
 <!-- ![memorygame](https://user-images.githubusercontent.com/100381663/234882144-706e52fa-bf19-4fe3-bc85-d2fd11dd26f4.gif) -->
@@ -18,7 +19,7 @@
 ## Optimizations
 
 - Allow guest user access
+- Get more details such as trailer on click of a movie
 
 ## Lesson learned
-- customizing maps
-
+- Working with an external Api within Salesforce as well as the security measures to put in place
