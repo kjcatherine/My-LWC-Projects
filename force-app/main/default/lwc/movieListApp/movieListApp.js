@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-const apiKey = process.env.API_KEY;
+import { API_KEY } from './config';
 export default class MovieListApp extends LightningElement {
     @track moviesData;
     @track searchQuery = '';
@@ -9,6 +9,7 @@ export default class MovieListApp extends LightningElement {
     }
 
     fetchMovieData() {
+        const apiKey = API_KEY;
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`)
             .then(response => {
                 if (!response.ok) {

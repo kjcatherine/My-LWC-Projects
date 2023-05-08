@@ -23,3 +23,4 @@
 
 ## Lesson learned
 - Working with an external Api within Salesforce as well as the security measures to put in place
+- process.env does not work in Salesforce LWC, a workaround to hide keys was to create a config file in the same LWC directory, then import to main JS and add the file to .gitignore
