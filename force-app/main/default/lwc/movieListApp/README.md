@@ -4,6 +4,15 @@
 
 ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/100381663/236634351-8664e603-db3c-404c-b1a2-801c41e88c65.gif)
 
+## To get this API to work in Salesforce
+ Bypass the CSP error by going to Setup
+- Search for CSP trusted sites
+- Give it any name
+- Add this to the url field (*.themoviedb.org)
+- make it active and tick all the available boxes
+- Save and wait a few minutes before refreshing, the error should be gone
+- If it remains, create a second trusted site with the same process but add (*.api.themoviedb.org) to the url field, wait and refresh, done!
+
 ## Tech used
 
 - SalesforceDX 
