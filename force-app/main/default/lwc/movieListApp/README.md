@@ -1,4 +1,4 @@
-# Movie Search
+# Movie Search API
 
 - Working with external Api to create a movie search component using the [TMDB Movie Api](https://developers.themoviedb.org/3/movies/get-movie-details)
 
