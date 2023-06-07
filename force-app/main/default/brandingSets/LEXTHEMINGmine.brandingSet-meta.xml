@@ -2,11 +2,11 @@
 <BrandingSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <brandingSetProperty>
         <propertyName>BRAND_COLOR</propertyName>
-        <propertyValue>#01345C</propertyValue>
+        <propertyValue>#D74803</propertyValue>
     </brandingSetProperty>
     <brandingSetProperty>
         <propertyName>PAGE_BACKGROUND_COLOR</propertyName>
-        <propertyValue>#083B63</propertyValue>
+        <propertyValue>#2291C1</propertyValue>
     </brandingSetProperty>
     <brandingSetProperty>
         <propertyName>HEADER_BACKGROUND_COLOR</propertyName>

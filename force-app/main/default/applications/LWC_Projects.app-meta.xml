@@ -14,6 +14,8 @@
     <tabs>Memory_Game</tabs>
     <tabs>Restaurant</tabs>
     <tabs>Reservation__c</tabs>
+    <tabs>MapsInLwc</tabs>
+    <tabs>Movie_List_API</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LWC_Projects_UtilityBar</utilityBar>
 </CustomApplication>
