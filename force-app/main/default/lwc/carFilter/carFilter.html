@@ -8,6 +8,25 @@
                 <lightning-slider label="Max Price" step="100" min="0" max="999999" 
                 value={filters.maxPrice} onchange={handleMaxPriceChange}></lightning-slider>
             </section>
+
+            <section>
+                <h2>Category</h2>
+                <template if:true={categories.data}>
+                    <template for:each={categories.data.values} for:item="category">
+                        <lightning-input key={category.label} 
+                        label={category.label} type="checkbox" 
+                        checked onchange={handleCheckbox}></lightning-input>
+                    </template>
+                </template>
+                
+                <template if:true={categories.error}>
+                    <div>{categoryError}</div>
+                </template>
+            </section>
+
+            <section>
+                <h2>Make</h2>
+            </section>
         </div>
     </lightning-card>
 </template>
