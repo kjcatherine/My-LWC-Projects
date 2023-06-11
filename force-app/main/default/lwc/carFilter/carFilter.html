@@ -14,11 +14,11 @@
                 <template if:true={categories.data}>
                     <template for:each={categories.data.values} for:item="category">
                         <lightning-input key={category.label} 
-                        label={category.label} type="checkbox" 
+                        label={category.label} type="checkbox" name="category"
                         checked onchange={handleCheckbox}></lightning-input>
                     </template>
                 </template>
-                
+
                 <template if:true={categories.error}>
                     <div>{categoryError}</div>
                 </template>
@@ -26,6 +26,17 @@
 
             <section>
                 <h2>Make</h2>
+                <template if:true={makeType.data}>
+                    <template for:each={makeType.data.values} for:item="make">
+                        <lightning-input key={make.label} 
+                        label={make.label} type="checkbox" name="makeType"
+                        checked onchange={handleCheckbox}></lightning-input>
+                    </template>
+                </template>
+                
+                <template if:true={makeType.error}>
+                    <div>{makeError}</div>
+                </template>
             </section>
         </div>
     </lightning-card>
