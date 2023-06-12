@@ -28,14 +28,20 @@ export default class CarFilter extends LightningElement {
         fieldApiName:MAKE_FIELD
     })makeType
 
-
-    handleSearchKeyChange(){
-
+    /********** Search Key Handler*********** */
+    handleSearchKeyChange(event){
+        console.log(event.target.value)
+        //this.filters = event.target.value //Don't update objects directly //other option is track
+        this.filters = {...this.filters, "searchKey":event.target.value}
     }
-    handleMaxPriceChange(){
-
+    /********** Price Range (slider) Handler*********** */
+    handleMaxPriceChange(event){
+        console.log(event.target.value)
+        this.filters = {...this.filters, "maxPrice":event.target.value}
     }
-    handleCheckbox(){
-
+    handleCheckbox(event){
+        const {name, value} = event.target.dataset
+        console.log("name", name)
+        console.log("value", value)
     }
 }
