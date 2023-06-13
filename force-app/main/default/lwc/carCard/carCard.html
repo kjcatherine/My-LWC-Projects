@@ -1,5 +1,10 @@
 <template>
     <lightning-card title="Car Card" icon-name="standard:apex_plugin">
-        
+        <div class="slds-m-horizontal_medium">
+            <!-- Beacuse we don't want tit to be editable -->
+            <lightning-record-view-form record-id={recordId} object-api-name="Car__c" density="compact">
+
+            </lightning-record-view-form>
+        </div>
     </lightning-card>
 </template>
