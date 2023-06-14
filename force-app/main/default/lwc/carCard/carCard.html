@@ -1,9 +1,16 @@
 <template>
-    <lightning-card title="Car Card" icon-name="standard:apex_plugin">
+    <lightning-card title={carName} icon-name="standard:apex_plugin">
         <div class="slds-m-horizontal_medium">
+           <img src={carPictureUrl} alt="Car Picture"/>
             <!-- Beacuse we don't want tit to be editable -->
-            <lightning-record-view-form record-id={recordId} object-api-name="Car__c" density="compact">
-
+            <lightning-record-view-form onload={handleRecordLoaded} record-id={recordId} object-api-name="Car__c" density="compact">
+                <lightning-output-field field-name={categoryField}></lightning-output-field>
+                <lightning-output-field field-name={makeField}></lightning-output-field>
+                <lightning-output-field field-name={msrpField}></lightning-output-field>
+                <section>Other Features</section>
+                <lightning-output-field field-name={fuelField}></lightning-output-field>
+                <lightning-output-field field-name={seatsField}></lightning-output-field>
+                <lightning-output-field field-name={controlField}></lightning-output-field>
             </lightning-record-view-form>
         </div>
     </lightning-card>
