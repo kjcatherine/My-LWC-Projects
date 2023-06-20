@@ -47,11 +47,13 @@ export default class CarFilter extends LightningElement {
     handleMaxPriceChange(event){
         console.log(event.target.value)
         this.filters = {...this.filters, "maxPrice":event.target.value}
+        this.sendDataToCarList()
     }
     handleCheckbox(event){
         const {name, value} = event.target.dataset
         console.log("name", name)
         console.log("value", value)
+        this.sendDataToCarList()
     }
 
     sendDataToCarList(){

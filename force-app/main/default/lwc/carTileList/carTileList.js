@@ -29,9 +29,10 @@ export default class CarTileList extends LightningElement {
         this.subscibeHandler()
     }
     subscibeHandler(){
-        this.carFilterSubscription = subscribe(this.messageContext, CARS_FILTERED_MESSAGE, (message)=>this.handleFilteredChanges(message))
+        this.carFilterSubscription = subscribe(this.messageContext, CARS_FILTERED_MESSAGE, (message)=>this.handleFilterChanges(message))
     }
-    handleFilteredChanges(message){
+    handleFilterChanges(message){
         console.log(message.filters)
+        this.filters = {...message.filters}
     }
 }

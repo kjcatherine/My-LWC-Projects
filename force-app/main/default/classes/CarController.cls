@@ -38,7 +38,7 @@ public with sharing class CarController {
             }
         }
 
-        String query = 'SELECT Id, Name, Description__c, Category__c, Picture_URL__c , MSRP__c FROM Car__c' + whereClause + ' WITH SECURITY_ENFORCED' + ' ORDER BY NAME';
+        String query = 'SELECT Id, Name, Description__c, Category__c, Picture_URL__c , MSRP__c FROM Car__c ' + whereClause + ' WITH SECURITY_ENFORCED ORDER BY NAME';
         return Database.query(query);
     }
 }
