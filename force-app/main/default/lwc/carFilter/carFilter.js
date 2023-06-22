@@ -16,6 +16,7 @@ export default class CarFilter extends LightningElement {
     }
     categoryError = CATEGORY_ERROR
     makeError = MAKE_ERROR
+    timer
 
     //Load context for LMS
     @wire(MessageContext)
@@ -69,8 +70,12 @@ export default class CarFilter extends LightningElement {
     }
 
     sendDataToCarList(){
-        publish(this.messageContext, CARS_FILTERED_MESSAGE, {
-            filters:this.filters
-        })
+        //Debouncing technique
+        window.clearTimeout(this.timer)
+        this.timer = window.setTimeout(()=>{
+            publish(this.messageContext, CARS_FILTERED_MESSAGE, {
+                filters:this.filters
+            })
+        },400)   
     }
 }
