@@ -13,9 +13,9 @@
                 <h2>Category</h2>
                 <template if:true={categories.data}>
                     <template for:each={categories.data.values} for:item="category">
-                        <lightning-input key={category.label} 
+                        <lightning-input key={category.value} 
                         label={category.label} type="checkbox" 
-                        data-name="category" data-value={category.value}
+                        data-name="categories" data-value={category.value}
                         checked onchange={handleCheckbox}></lightning-input>
                     </template>
                 </template>

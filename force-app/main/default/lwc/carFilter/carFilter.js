@@ -63,8 +63,8 @@ export default class CarFilter extends LightningElement {
             if(!this.filters[name].includes(value)){
                 this.filters[name] = [...this.filters[name], value]
             }
-        }else{
-            this.filters[name] = this.filters[name].filter(item=>item !==value)
+        } else {
+            this.filters[name] =  this.filters[name].filter(item=>item !==value)
         }
         this.sendDataToCarList()
     }

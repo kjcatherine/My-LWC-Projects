@@ -35,4 +35,7 @@ export default class CarTileList extends LightningElement {
         console.log(message.filters)
         this.filters = {...message.filters}
     }
+    handleCarSelected(event){
+        console.log("selected car Id", event.detail)
+    }
 }

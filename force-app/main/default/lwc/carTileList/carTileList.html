@@ -4,7 +4,7 @@
             <template if:true={cars}>
                 <div class="content">
                     <template for:each={cars} for:item="car">
-                        <c-car-tile key={car.Id} car={car}></c-car-tile>
+                        <c-car-tile key={car.Id} car={car} onselected={handleCarSelected}></c-car-tile>
                     </template>
                 </div>
             </template>
