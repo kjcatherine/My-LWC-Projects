@@ -50,8 +50,8 @@ export default class CarCard extends LightningElement {
     subscibeHandler(){
         this.carSelectedSubscription = subscribe(this.messageContext, CAR_SELECTED_MESSAGE, (message)=>this.handleCarSelected(message))
     }
-    handleCarSelected(carId){
-        this.recordId = carId
+    handleCarSelected(message){
+        this.recordId = message.carId
     }
     disconnectedCallback(){
         unsubscribe(this.carSelectedSubscription)
