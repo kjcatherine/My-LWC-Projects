@@ -25,11 +25,11 @@ export default class SimilarCars extends NavigationMixin(LightningElement) {
 
     handleViewDetailsClick(event){
         this[NavigationMixin.Navigate]({
-            type: 'standard__recordPage',
+            type:'standard__recordPage',
             attributes:{
-                recordId: event.target.dataset.Id,
-                objectApiName: this.objectApiName,
-                actionName: 'view'
+                recordId:event.target.dataset.id,
+                objectApiName:this.objectApiName,
+                actionName:'view'
             }
         })
     }
