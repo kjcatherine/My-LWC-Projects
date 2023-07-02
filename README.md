@@ -10,7 +10,8 @@ A collection of my personal Lightning Web Components Projects.
 
 4. A Movie search Api [See Component](force-app/main/default/lwc/movieListApp)
 
-5. CarHub Project, Loads car details and allow user flexibilty to search with different parameters, and also allows to navigate to record page. See relevant links below
+### CarHub Project, Loads car details and allow user flexibilty to search with different parameters, and also allows to navigate to record page. See relevant links below
+
 1. [Custom Page Template Design](force-app/main/default/aura/pageTemplate_2_7_3/pageTemplate_2_7_3.cmp)
 2. [carFilter Component](force-app/main/default/lwc/carFilter)
 3. [carTile Component](force-app/main/default/lwc/carTile)
